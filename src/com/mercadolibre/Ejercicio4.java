@@ -2,20 +2,26 @@ package com.mercadolibre;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio4 {
     public static void main(String[] args) {
-        System.out.println("Ingrese el número que desea validar: ");
-
+        //Declaramos el objeto scanner
         Scanner scanner = new Scanner(System.in);
+
+        //capturamos la cantidad de enteros
+        System.out.println("Cuantos Numeros primos quiere ver: ");
         int n = scanner.nextInt();
-        if (esPrimo(n)){
-            System.out.println("Es primo");
-        }else{
-            System.out.println("No es primo");
+        int i = 0;
+
+        System.out.println("Los "+n+" primeros números primos son: ");
+        while (n != 0){
+            if (esPrimo(i)){
+                System.out.print(i+", ");
+                n--;
+            }
+            i++;
         }
         scanner.close();
     }
-
     public static boolean esPrimo(int x){
         int j = 0;
         for (int i = 1; i <= x; i++) {
@@ -25,4 +31,5 @@ public class Ejercicio3 {
         }
         return j == 2;
     }
+
 }

@@ -5,26 +5,20 @@ import java.util.Scanner;
 public class Ejercicio2 {
 
     public static void main(String[] args) {
+        System.out.println("Ingrese el número que desea conocer los multiplos: ");
 
-        //Declaramos el objeto scanner
         Scanner scanner = new Scanner(System.in);
-
-        //capturamos la cantidad de enteros
-        System.out.println("Ingrese el nùmero del cual quiera ver sus multiplos: ");
         int m = scanner.nextInt();
-        System.out.println("Cuantos multiplos quiere ver: ");
+
+        System.out.println("Ingrese la cantidad de multiplos que desea conocer: ");
         int n = scanner.nextInt();
 
-        int i = 0;
-
-        //evaluamos los números enteros
-        System.out.println("los primeros "+n+" múltiplos de "+m);
-        while (n != 0){
-            if (i%2 == 0) {
+        for (int i = 1; i <= m; i++) {
+            if(m%i == 0 && n!=0){
                 System.out.print(i+", ");
                 n--;
             }
-            i++;
         }
+        scanner.close();
     }
 }
