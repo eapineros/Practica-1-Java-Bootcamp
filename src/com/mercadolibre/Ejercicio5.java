@@ -16,9 +16,26 @@ public class Ejercicio5 {
 
         System.out.println("Ingrese el digito a repetirse: ");
         int digito = scanner.nextInt();
-
+        int i= 0;
+        while (cantidadNumeros != 0){
+            if (digitos(i,cantidadDigitos,digito)) {
+                System.out.print(i+", ");
+                cantidadNumeros--;
+            }
+            i++;
+        }
+        scanner.close();
+        //System.out.println(digitos(555,cantidadDigitos, digito));
     }
     public static boolean digitos (int num, int cantdig, int digito){
-        
+        int count = 0;
+        char c = (char) (digito+'0');
+        String numero = Integer.toString(num);
+        for (int i = 0; i <numero.length(); i++) {
+            if (numero.charAt(i) == c) {
+                count++;
+            }
+        }
+        return count == cantdig;
     }
 }
